@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".VIEW.FRAGMENT.ProfilePageUi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/app_name"
+                android:textColor="@color/app_blue"
+                android:textSize="@dimen/font_big" />
+
+            <TextView
+                android:id="@+id/profile_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:text="@string/SignOUT_string"
+                android:textSize="@dimen/font_big" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/bg_drop_shadow" />
+
+        <TextView
+            android:id="@+id/profile_battle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="5dp"
+            android:background="@drawable/rectangular_black_border_white"
+            android:padding="5dp"
+            android:text="@string/battle_string"
+            android:textColor="@color/app_yellow"
+            android:textSize="@dimen/font_big" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/bg_drop_shadow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="@string/repo_string"
+            android:textSize="@dimen/font_big" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/own_repo_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</layout>

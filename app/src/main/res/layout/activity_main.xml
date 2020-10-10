@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".VIEW.ACTIVITY.Homepage">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="3dp"
+            android:text="@string/app_name"
+            android:textColor="@color/app_yellow"
+            android:textSize="@dimen/font_big"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/category_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/rectangular_green"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/sign_string"
+            android:textColor="@color/app_white1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/bg_drop_shadow" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/category_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_white1"
+            custom:tabIndicatorColor="@color/colorAccent"
+            custom:tabSelectedTextColor="@color/colorAccent"
+            custom:tabTextAppearance="@style/MineCustomTabText"
+            custom:tabTextColor="@color/app_black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/bg_drop_shadow" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/category_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</layout>

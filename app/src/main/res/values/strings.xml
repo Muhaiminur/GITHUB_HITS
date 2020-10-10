@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Github Hits</string>
+    <string name="repositories_string">Repositories</string>
+    <string name="developers_string">Developers</string>
+
+    <string name="ok_string">OK</string>
+    <string name="no_string">OK</string>
+    <string name="no_data_string">No Data</string>
+    <string name="not_auth_string">UserName And Password Not matched</string>
+    <string name="popular_string">POPULAR REPO</string>
+    <string name="follow_string">Follow</string>
+    <string name="sign_string">Sign in into Github</string>
+    <string name="SignOUT_string">Sign Out</string>
+
+    <string name="username_string">Username or Email Address</string>
+    <string name="password_string">Password</string>
+    <string name="battle_string">Github Battle</string>
+    <string name="repo_string">Popular Repositories</string>
+    <string name="compare_string">Compare With Me</string>
+
+    <string name="pone_string">Player One</string>
+    <string name="ptwo_string">Player Two</string>
+    <string name="submit_string">Submit</string>
+    <string name="gituser_string">Github Username</string>
+    <string name="reset_string">Reset</string>
+
+    <string name="winner_string">Winner</string>
+    <string name="looser_string">Looser</string>
+    <string name="follower_string">Follower : </string>
+    <string name="following_string">Following : </string>
+    <string name="pub_repo_string">Public Repo :</string>
+    <string name="score_string">Score : </string>
+    <string name="battle_again_string">Battle Again</string>
+
+</resources>

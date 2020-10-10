@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fec107</color>
+    <color name="colorPrimaryDark">#fec107</color>
+    <color name="colorAccent">#fec107</color>
+
+    <color name="app_yellow">#fec107</color>
+
+
+    <color name="app_white1">#ffffff</color>
+    <color name="app_black">#222222</color>
+    <color name="app_blue">#ff33b5e5</color>
+    <color name="app_hint">#b7b7b7</color>
+
+
+</resources>

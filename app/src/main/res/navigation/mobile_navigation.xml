@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/frag_login">
+
+    <fragment
+        android:id="@+id/frag_login"
+        android:name="com.misfit.githubhits.VIEW.FRAGMENT.LoginUi"
+        android:label="@string/sign_string"
+        tools:layout="@layout/login_ui_fragment" />
+
+    <fragment
+        android:id="@+id/frag_profile"
+        android:name="com.misfit.githubhits.VIEW.FRAGMENT.ProfilePageUi"
+        android:label="@string/app_name"
+        tools:layout="@layout/profile_page_ui_fragment" />
+
+    <fragment
+        android:id="@+id/frag_battel"
+        android:name="com.misfit.githubhits.VIEW.FRAGMENT.BattelUi"
+        android:label="@string/app_name"
+        tools:layout="@layout/battel_ui_fragment" />
+</navigation>

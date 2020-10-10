@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".VIEW.FRAGMENT.BattelUi">
+
+        <TextView
+            android:id="@+id/battle_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangular_black_border_white"
+            android:padding="5dp"
+            android:text="@string/compare_string" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/battle_oneuser_stage_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/pone_string"
+                                android:textColor="@color/app_black" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@drawable/bg_drop_shadow" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/battle_oneuser"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/gituser_string"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:textColorHint="@color/app_hint" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <Button
+                                android:id="@+id/battle_oneuser_submit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/rectangular_green"
+                                android:text="@string/submit_string"
+                                android:textColor="@color/app_white1"
+                                android:textSize="@dimen/font_xxxl" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/battle_oneuser_stage_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/battle_oneuser_imageone"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_loading" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_username1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/app_name"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xxxl"
+                                android:textStyle="italic" />
+
+                            <Button
+                                android:id="@+id/battle_oneuser_reset"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:background="@color/app_white1"
+                                android:text="@string/reset_string"
+                                android:textColor="@color/app_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/battle_oneuser_stage_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_result"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/winner_string"
+                                android:textColor="@color/app_yellow"
+                                android:textSize="@dimen/font_xxxl" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/winner_string"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xl" />
+
+                            <ImageView
+                                android:id="@+id/battle_oneuser_imagesecond"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_loading" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_username2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/app_name"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xxxl"
+                                android:textStyle="italic" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@drawable/bg_drop_shadow" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_follower"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_following"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_oneuser_publicrepo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/battle_twouser_stage_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/ptwo_string"
+                                android:textColor="@color/app_black" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@drawable/bg_drop_shadow" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/battle_twouser"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/gituser_string"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:textColorHint="@color/app_hint" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <Button
+                                android:id="@+id/battle_twouser_submit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/rectangular_green"
+                                android:text="@string/submit_string"
+                                android:textColor="@color/app_white1"
+                                android:textSize="@dimen/font_xxxl" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/battle_twouser_stage_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/battle_twouser_imageone"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_loading" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_username1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/app_name"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xxxl"
+                                android:textStyle="italic" />
+
+                            <Button
+                                android:id="@+id/battle_twouser_reset"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:background="@color/app_white1"
+                                android:text="@string/reset_string"
+                                android:textColor="@color/app_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/battle_twouser_stage_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/battle_twouser_result"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/winner_string"
+                                android:textColor="@color/app_yellow"
+                                android:textSize="@dimen/font_xxxl" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/winner_string"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xl" />
+
+                            <ImageView
+                                android:id="@+id/battle_twouser_imagesecond"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_loading" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_username2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="@string/app_name"
+                                android:textColor="@color/app_blue"
+                                android:textSize="@dimen/font_xxxl"
+                                android:textStyle="italic" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@drawable/bg_drop_shadow" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_follower"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_following"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+
+                            <TextView
+                                android:id="@+id/battle_twouser_publicrepo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="@string/app_name" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/battle_hit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rectangular_green"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/battle_string"
+                    android:textColor="@color/app_white1"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/battle_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rectangular_green"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/battle_again_string"
+                    android:textColor="@color/app_white1"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
