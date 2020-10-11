@@ -17,6 +17,16 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/app_name"
+                android:padding="2dp"
+                android:src="@mipmap/ic_launcher_round" />
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -58,7 +68,7 @@
             <Button
                 android:id="@+id/sign_hit"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:background="@drawable/rectangular_green"

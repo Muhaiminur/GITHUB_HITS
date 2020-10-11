@@ -22,11 +22,17 @@
             android:textSize="@dimen/font_big"
             android:textStyle="bold" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/bg_drop_shadow" />
+
         <Button
             android:id="@+id/category_sign"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_gravity="end"
+            android:layout_margin="5dp"
             android:background="@drawable/rectangular_green"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"

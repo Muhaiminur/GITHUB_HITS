@@ -31,5 +31,9 @@
     <string name="pub_repo_string">Public Repo :</string>
     <string name="score_string">Score : </string>
     <string name="battle_again_string">Battle Again</string>
+    <string name="two_fact_string">Otp For Two Factor Authentication</string>
+    <string name="otp_string">Enter OTP</string>
+
+    <string name="no_browser_string">No Browser Found To Open Link</string>
 
 </resources>

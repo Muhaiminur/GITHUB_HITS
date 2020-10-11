@@ -1,28 +1,21 @@
 package com.misfit.githubhits.ADAPTER;
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.misfit.githubhits.LIBRARY.Utility;
-import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
 import com.misfit.githubhits.MODEL.GET.GITREPO.REPOLIST;
 import com.misfit.githubhits.R;
 
@@ -80,6 +73,7 @@ public class REPOADAPTER extends RecyclerView.Adapter<REPOADAPTER.Todo_View_Hold
             holder.repo_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    open_link(bodyResponse.getHtmlUrl());
                 }
             });
         } catch (Exception e) {
@@ -90,5 +84,25 @@ public class REPOADAPTER extends RecyclerView.Adapter<REPOADAPTER.Todo_View_Hold
     @Override
     public int getItemCount() {
         return repo_list.size();
+    }
+
+    //open link to browser
+    public void open_link(String url) {
+        try {
+            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+            builder.setToolbarColor(ContextCompat.getColor(context, R.color.colorAccent));
+            CustomTabsIntent customTabsIntent = builder.build();
+            customTabsIntent.launchUrl(context, Uri.parse(url));
+        } catch (Exception e) {
+            Log.d("Error Line Number", Log.getStackTraceString(e));
+            try {
+                Uri uri = Uri.parse(url); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                context.startActivity(intent);
+            } catch (Exception e2) {
+                Log.d("Error Line Number", Log.getStackTraceString(e2));
+                utility.showDialog(context.getResources().getString(R.string.no_browser_string));
+            }
+        }
     }
 }

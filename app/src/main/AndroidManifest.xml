@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VIEW.ACTIVITY.WorkingUi"></activity>
+        <activity
+            android:name=".VIEW.ACTIVITY.WorkingUi"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".VIEW.ACTIVITY.Homepage"
             android:theme="@style/AppTheme.NoActionBar">

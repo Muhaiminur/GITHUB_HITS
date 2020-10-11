@@ -8,9 +8,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.misfit.githubhits.HTTP.ApiClient;
 import com.misfit.githubhits.HTTP.ApiInterface;
 import com.misfit.githubhits.MODEL.GET.GETBATTLEUSER;
-import com.misfit.githubhits.MODEL.GET.GET_OWNREPO;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,6 +19,8 @@ public class BattleRepo {
     private MutableLiveData<GETBATTLEUSER> usertwoMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<Boolean> progressbarObservable = new MutableLiveData<>();
 
+
+    //find user
     public void get_user_one(String name) {
         try {
             progressbarObservable.postValue(true);
@@ -59,6 +58,7 @@ public class BattleRepo {
         }
     }
 
+    //find second user
     public void get_user_two(String name) {
         try {
             progressbarObservable.postValue(true);

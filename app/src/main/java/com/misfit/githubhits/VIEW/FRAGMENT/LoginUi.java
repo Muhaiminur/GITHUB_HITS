@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -20,15 +20,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
+import com.misfit.githubhits.LIBRARY.KeyWord;
 import com.misfit.githubhits.LIBRARY.Utility;
 import com.misfit.githubhits.MODEL.GET.GET_LOGIN;
-import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
+import com.misfit.githubhits.MODEL.GET.GET_LOGIN_ERRO;
 import com.misfit.githubhits.R;
 import com.misfit.githubhits.VIEWMODEL.LoginUiViewModel;
-import com.misfit.githubhits.VIEWMODEL.RepositoryUiViewModel;
 import com.misfit.githubhits.databinding.LoginUiFragmentBinding;
+
+import java.util.HashMap;
 
 public class LoginUi extends Fragment {
 
@@ -53,7 +59,7 @@ public class LoginUi extends Fragment {
                         if (!TextUtils.isEmpty(loginUiFragmentBinding.signUser.getText().toString())) {
                             if (!TextUtils.isEmpty(loginUiFragmentBinding.signPass.getText().toString())) {
                                 token = "Basic " + utility.encodeBase64(loginUiFragmentBinding.signUser.getText().toString() + ":" + loginUiFragmentBinding.signPass.getText().toString());
-                                loginUiViewModel.sign_in_hits(token);
+                                loginUiViewModel.sign_in_hits(token, "");
                             } else {
                                 loginUiFragmentBinding.signPass.setError(getResources().getString(R.string.password_string));
                                 loginUiFragmentBinding.signPass.requestFocusFromTouch();
@@ -130,6 +136,70 @@ public class LoginUi extends Fragment {
                 }
             }
         });
+
+        loginUiViewModel.get_login_erroLiveData().observe(getActivity(), new Observer<GET_LOGIN_ERRO>() {
+            @Override
+            public void onChanged(final GET_LOGIN_ERRO githubrepo) {
+                try {
+                    if (githubrepo != null) {
+                        utility.logger("login two" + githubrepo);
+                        open_otp();
+                    } else {
+                        utility.logger("not working");
+                        utility.showToast(context.getResources().getString(R.string.no_data_string));
+                    }
+                } catch (Exception e) {
+                    Log.d("Error Line Number", Log.getStackTraceString(e));
+                }
+            }
+        });
+    }
+
+
+    //otp ask for 2FA
+    public void open_otp() {
+        try {
+            HashMap<String, Integer> screen = utility.getScreenRes();
+            int width = screen.get(KeyWord.SCREEN_WIDTH);
+            int height = screen.get(KeyWord.SCREEN_HEIGHT);
+            int mywidth = (width / 10) * 7;
+            final Dialog dialog = new Dialog(context);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            dialog.setContentView(R.layout.dialog_otp);
+            TextInputEditText otp = dialog.findViewById(R.id.otp_input);
+            Button update_yes = dialog.findViewById(R.id.btn_yes);
+            Button update_no = dialog.findViewById(R.id.btn_no);
+            LinearLayout ll = dialog.findViewById(R.id.dialog_layout_size);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) ll.getLayoutParams();
+            params.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            params.width = mywidth;
+            ll.setLayoutParams(params);
+            update_yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!TextUtils.isEmpty(otp.getEditableText().toString())) {
+                        if (!TextUtils.isEmpty(utility.getUSER_ID())) {
+                            dialog.dismiss();
+                            loginUiViewModel.sign_in_hits(token, otp.getEditableText().toString());
+                        }
+                    } else {
+                        otp.setError(getResources().getString(R.string.otp_string));
+                        otp.requestFocusFromTouch();
+                    }
+                }
+            });
+            update_no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.setCancelable(true);
+            dialog.show();
+        } catch (Exception e) {
+            Log.d("Error Line Number", Log.getStackTraceString(e));
+        }
     }
 
 }

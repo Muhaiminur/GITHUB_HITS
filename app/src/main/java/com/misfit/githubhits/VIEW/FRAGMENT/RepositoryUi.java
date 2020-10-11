@@ -41,14 +41,6 @@ public class RepositoryUi extends Fragment {
     List<REPOLIST> repolists;
     REPOADAPTER repoadapter;
     RepositoryUiViewModel repositoryUiViewModel;
-
-    @SuppressLint("ValidFragment")
-    public RepositoryUi() {
-
-    }
-
-    private RepositoryUiViewModel mViewModel;
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (repositoryUiFragmentBinding == null) {

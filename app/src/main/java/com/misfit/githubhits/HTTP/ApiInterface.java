@@ -2,6 +2,7 @@ package com.misfit.githubhits.HTTP;
 
 import com.misfit.githubhits.MODEL.GET.GETBATTLEUSER;
 import com.misfit.githubhits.MODEL.GET.GET_LOGIN;
+import com.misfit.githubhits.MODEL.GET.GET_LOGIN_ERRO;
 import com.misfit.githubhits.MODEL.GET.GET_OWNREPO;
 import com.misfit.githubhits.MODEL.GET.GITHUBDEVO;
 import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
@@ -9,7 +10,6 @@ import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -27,7 +27,7 @@ public interface ApiInterface {
 
     //3 Login Verification
     @POST("user")
-    Call<GET_LOGIN> SIGN_IN(@Header("Content-Type") String ct, @Header("Accept") String acc, @Header("Authorization") String token);
+    Call<GET_LOGIN> SIGN_IN(@Header("Content-Type") String ct, @Header("Accept") String acc, @Header("Authorization") String token, @Header("X-GitHub-OTP") String otp);
 
     //4 github own repository
     @GET("/users/{own_url}/repos")
@@ -36,5 +36,9 @@ public interface ApiInterface {
     //5 github user search
     @GET("/users/{username}")
     Call<GETBATTLEUSER> SEARCH_USER(@Path("username") String name);
+
+    //6 Two Factor login
+    @POST("authorizations")
+    Call<GET_LOGIN_ERRO> SIGN_IN_TwoFactor(@Header("Content-Type") String ct, @Header("Accept") String acc, @Header("Authorization") String token);
 
 }

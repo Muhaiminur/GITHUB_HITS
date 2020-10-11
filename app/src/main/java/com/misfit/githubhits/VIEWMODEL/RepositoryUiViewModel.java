@@ -8,10 +8,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
-import com.misfit.githubhits.REPOSITORY.HomepageRepo;
+import com.misfit.githubhits.REPOSITORY.RepositoryRepo;
 
 public class RepositoryUiViewModel extends AndroidViewModel {
-    private HomepageRepo homepageRepo;
+    private RepositoryRepo repositoryRepo;
     private LiveData<GITHUBREPO> githubrepoLiveData;
     private MutableLiveData<Boolean> progressbarObservable;
 
@@ -20,14 +20,14 @@ public class RepositoryUiViewModel extends AndroidViewModel {
     }
 
     public void init(String query) {
-        homepageRepo = new HomepageRepo();
+        repositoryRepo = new RepositoryRepo();
         searchbanklist(query);
-        githubrepoLiveData = homepageRepo.getApi_responseLiveData();
-        progressbarObservable = homepageRepo.getProgress();
+        githubrepoLiveData = repositoryRepo.getApi_responseLiveData();
+        progressbarObservable = repositoryRepo.getProgress();
     }
 
     public void searchbanklist(String q) {
-        homepageRepo.get_hits_repo(q);
+        repositoryRepo.get_hits_repo(q);
     }
 
     public LiveData<GITHUBREPO> getResponseLiveData() {

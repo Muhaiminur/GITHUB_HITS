@@ -1,19 +1,14 @@
 package com.misfit.githubhits.VIEW.FRAGMENT;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -47,6 +42,7 @@ public class BattelUi extends Fragment {
                     context = getActivity();
                     utility = new Utility(context);
                 }
+                //search one user
                 battelUiFragmentBinding.battleOneuserSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -58,6 +54,7 @@ public class BattelUi extends Fragment {
                         }
                     }
                 });
+                //search two user
                 battelUiFragmentBinding.battleTwouserSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -69,6 +66,7 @@ public class BattelUi extends Fragment {
                         }
                     }
                 });
+                //user one reset
                 battelUiFragmentBinding.battleOneuserReset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -80,6 +78,7 @@ public class BattelUi extends Fragment {
                         battelUiFragmentBinding.battleAgain.setVisibility(View.GONE);
                     }
                 });
+                //user2 reset
                 battelUiFragmentBinding.battleTwouserReset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -91,6 +90,7 @@ public class BattelUi extends Fragment {
                         battelUiFragmentBinding.battleAgain.setVisibility(View.GONE);
                     }
                 });
+                //comparison between two user
                 battelUiFragmentBinding.battleHit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -109,6 +109,7 @@ public class BattelUi extends Fragment {
                         }
                     }
                 });
+                //battle reset
                 battelUiFragmentBinding.battleAgain.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -124,6 +125,7 @@ public class BattelUi extends Fragment {
                         battelUiFragmentBinding.battleTwouserStageThree.setVisibility(View.GONE);
                     }
                 });
+                //battle with me
                 battelUiFragmentBinding.battleMe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

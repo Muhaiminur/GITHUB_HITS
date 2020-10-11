@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.misfit.githubhits.HTTP.ApiClient;
 import com.misfit.githubhits.HTTP.ApiInterface;
-import com.misfit.githubhits.MODEL.GET.GET_LOGIN;
 import com.misfit.githubhits.MODEL.GET.GET_OWNREPO;
 
 import java.util.List;
@@ -21,6 +20,7 @@ public class ProfileRepo {
     private MutableLiveData<List<GET_OWNREPO>> responseMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<Boolean> progressbarObservable = new MutableLiveData<>();
 
+    //GET USER OWN REPO
     public void get_own_repo(String url) {
         try {
             progressbarObservable.postValue(true);

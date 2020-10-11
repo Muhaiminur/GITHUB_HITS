@@ -73,6 +73,7 @@ public class DeveloperUi extends Fragment {
         observeprogressbar();
     }
 
+    //intial ui
     public void initial_repo() {
         devolists = new ArrayList<>();
         developeradapter = new DEVELOPERADAPTER(devolists, context);

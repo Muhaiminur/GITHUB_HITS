@@ -9,7 +9,6 @@ import com.misfit.githubhits.HTTP.ApiClient;
 import com.misfit.githubhits.HTTP.ApiInterface;
 import com.misfit.githubhits.LIBRARY.KeyWord;
 import com.misfit.githubhits.MODEL.GET.GITHUBDEVO;
-import com.misfit.githubhits.MODEL.GET.GITHUBREPO;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,6 +19,8 @@ public class DeveloperRepo {
     private MutableLiveData<GITHUBDEVO> responseMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<Boolean> progressbarObservable = new MutableLiveData<>();
 
+
+    //get hits developer repo
     public void get_hits_devo(String query) {
         try {
             progressbarObservable.postValue(true);

@@ -42,6 +42,7 @@ public class Homepage extends AppCompatActivity {
             activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
             context = Homepage.this;
             utility = new Utility(context);
+            //set tab layout
             activityMainBinding.categoryViewpager.setAdapter(new TAB_ADAPTER((getSupportFragmentManager())));
             activityMainBinding.categoryViewpager.setOffscreenPageLimit(2);
             if (null != context) {
@@ -57,6 +58,8 @@ public class Homepage extends AppCompatActivity {
                     }
                 });
             }
+
+            //go to sign in page
             activityMainBinding.categorySign.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -64,6 +67,7 @@ public class Homepage extends AppCompatActivity {
                     finish();
                 }
             });
+            //user name show
             getLogin = utility.getUSER();
             if (getLogin != null && !TextUtils.isEmpty(getLogin.getLogin())) {
                 activityMainBinding.categorySign.setText(getLogin.getLogin());
@@ -73,6 +77,8 @@ public class Homepage extends AppCompatActivity {
         }
     }
 
+
+    // tab adapter
     class TAB_ADAPTER extends FragmentPagerAdapter {
 
         public TAB_ADAPTER(FragmentManager fm) {
